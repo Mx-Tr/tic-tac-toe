@@ -1,10 +1,14 @@
 import React from "react";
+import GameText from "./components/GameText";
+import Field from "./components/Field";
 
 function App() {
   return (
-    <>
-      <h1>ПАШЁЛ НАХУЙ</h1>
-    </>
+    <div className={"appComp"}>
+      <GameText/>
+
+      <Field/>
+    </div>
   );
 }
 

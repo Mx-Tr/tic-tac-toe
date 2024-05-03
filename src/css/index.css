@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #D3E2EB;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameText {
+    margin-bottom: 1.5rem;
+}
+
+.field {
+    height: 12rem;
+    width: 12rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.1rem;
+}
+
+.cell {
+    border: 1px solid black;
+    height: calc(4rem - 1px);
+    width: calc(4rem - 1px);
+}
+
+
+.cross {
+    background-color: rgb(230, 74, 74);
+}
+
+.zero {
+    background-color: rgb(74, 74, 201);
+}
