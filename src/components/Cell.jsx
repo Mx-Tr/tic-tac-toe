@@ -1,16 +1,21 @@
-import {useState} from "react";
 
 let queue = "zero";
 
-export default function Cell({value}) {
-	const [cellValue, setCellValue] = useState('')
+
+export default function Cell({index, fieldArray, cellValue, setCellValue}) {
+
 
 	return (
 		<div
-			className={`cell ${cellValue}`}
+			className={fieldArray[index] ? `cell ${fieldArray[index]}` : `cell`}
 			onClick={() => {
-				queue = (queue === "cross") ? "zero" : "cross"
-				setCellValue(queue)
+				if (fieldArray[index] === null) {
+
+					setCellValue(queue)
+					queue = queue === "zero" ? "cross" : "zero"
+					fieldArray[index] = queue
+				}
+
 			}}
 		>
 

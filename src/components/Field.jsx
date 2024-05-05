@@ -1,13 +1,20 @@
 import Cell from "./Cell";
 
-export default function Field() {
-	const fieldArray = new Array(9).fill(null);
+export default function Field({fieldArray,cellValue, setCellValue}) {
+
+	console.log(fieldArray);
+
 
 	return (
 		<div className={"field"}>
-			{fieldArray.map((cell, index) =>
-				<Cell key={index} />
-			)}
+			{fieldArray.map((cell, index) => {
+				return <Cell
+					key={index}
+					index={index}
+					cellValue={cellValue}
+					setCellValue={setCellValue}
+					fieldArray={fieldArray}/>
+			})}
 		</div>
 	)
 }
