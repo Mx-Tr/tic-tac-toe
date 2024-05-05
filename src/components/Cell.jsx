@@ -1,7 +1,3 @@
-
-let queue = "zero";
-
-
 export default function Cell({index, fieldArray, cellValue, setCellValue}) {
 
 
@@ -11,9 +7,9 @@ export default function Cell({index, fieldArray, cellValue, setCellValue}) {
 			onClick={() => {
 				if (fieldArray[index] === null) {
 
-					setCellValue(queue)
-					queue = queue === "zero" ? "cross" : "zero"
-					fieldArray[index] = queue
+					fieldArray[index] = cellValue
+					setCellValue(cellValue === "zero" ? "cross" : "zero")
+
 				}
 
 			}}
