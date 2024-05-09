@@ -1,15 +1,17 @@
-export default function Cell({index, fieldArray, cellValue, setCellValue}) {
+export default function Cell({index, fieldArray, cellValue, setCellValue, gameIsOn}) {
 
 
 	return (
 		<div
 			className={fieldArray[index] ? `cell ${fieldArray[index]}` : `cell`}
 			onClick={() => {
-				if (fieldArray[index] === null) {
+				if (gameIsOn) {
+					if (fieldArray[index] === null) {
 
-					fieldArray[index] = cellValue
-					setCellValue(cellValue === "zero" ? "cross" : "zero")
+						fieldArray[index] = cellValue
+						setCellValue(cellValue === "zero" ? "cross" : "zero")
 
+					}
 				}
 
 			}}
